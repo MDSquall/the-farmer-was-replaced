@@ -14,7 +14,7 @@ def sort_line(start_x, start_y, direction):
 		if swap_count == 0:
 			break
 			
-def sort_line():
+def sort_line_vertical():
 
 	start_x = get_pos_x()
 	start_y = get_pos_y()
@@ -31,7 +31,7 @@ def sort_line():
 		if swap_count == 0:
 			break
 
-def sort_line_east():
+def sort_line_horizontal():
 
 	start_x = get_pos_x()
 	start_y = get_pos_y()
@@ -72,10 +72,10 @@ while True:
 	drones = []
 	navigation.move_to(0,0)
 	while num_drones() != max_drones():
-		drone = spawn_drone(sort_line)
+		drone = spawn_drone(sort_line_vertical)
 		drones.append(drone)
 		move(East)
-	sort_line()
+	sort_line_vertical()
 	
 	while drones:
 		for i in drones:
@@ -85,10 +85,10 @@ while True:
 	drones = []
 	navigation.move_to(0,0)
 	while num_drones() != max_drones():
-		drone = spawn_drone(sort_line_east)
+		drone = spawn_drone(sort_line_horizontal)
 		drones.append(drone)
 		move(North)
-	sort_line_east()
+	sort_line_horizontal()
 	
 	while drones:
 		for i in drones:
