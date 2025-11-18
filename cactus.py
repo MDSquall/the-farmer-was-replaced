@@ -94,5 +94,4 @@ while True:
 		for i in drones:
 			if has_finished(i):
 				drones.remove(i)
-	navigation.move_to(0,31)
 	harvest()
